@@ -13,11 +13,17 @@
             <div class="space-x-4">
                 <a href="{% url 'core:about' %}" class="text-white">About</a>
 
+                <!-- if the user is authenticated then it will show project library or else it will show the default login and signup pages -->
+
                 {% if request.user.is_authenticated %}
-                <a  class="py-4 px-8 bg-sky-600 text-white">Projects</a>
+
+                <a href="{% url 'project:projects' %}" class="py-4 px-8 bg-sky-600 text-white">Projects</a>
+
                 {% else %}
-                    <a class="py-4 px-8 bg-slate-600 text-white">Log in</a>
-                    <a  class="py-4 px-8 bg-sky-600 text-white">Sign up</a>
+
+                    <a href="{% url 'account:login' %}" class="py-4 px-8 bg-slate-600 text-white">Log in</a>
+                    <a href="{% url 'account:signup' %}" class="py-4 px-8 bg-sky-600 text-white">Sign up</a>
+                    
                 {% endif %}
             </div>
         </nav>
