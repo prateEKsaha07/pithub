@@ -1,7 +1,41 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-    <header class="py-12 text-center bg-slate-200">
+    <!-- <header class="py-12 text-center bg-slate-200 rounded">
         <h1 class="text-3xl">Welcome to Pithub</h1>
-    </header>
+    </header> -->
+    <div class="hero min-h-screen bg-white shadow-lg rounded-xl p-10 text-center flex flex-col justify-center items-center animate__animated animate__fadeInDown">
+        <h1 class="text-6xl font-extrabold text-gray-700 animate__animated animate__pulse animate__infinite">Welcome to Pithub</h1>
+        <p class="py-6 max-w-md text-gray-600 text-center animate__animated animate__fadeInUp animate__delay-1s">
+            A simple and efficient way to store, manage, and share your code snippets securely.
+            You can also add, edit, delete, and organize notes and tasks seamlessly.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 animate__animated animate__zoomIn animate__delay-2s">
+            <div class="btn btn-primary flex items-center gap-2 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg">
+                <i data-lucide="plus-circle"></i> Add Snippet
+            </div>
+            <div class="btn btn-secondary flex items-center gap-2 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg">
+                <i data-lucide="edit"></i> Edit Snippet
+            </div>
+            <div class="btn btn-error flex items-center gap-2 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg">
+                <i data-lucide="trash-2"></i> Delete Snippet
+            </div>
+            <div class="btn btn-outline btn-accent flex items-center gap-2 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg">
+                <i data-lucide="file-text"></i> Manage Notes
+            </div>
+            <div class="btn btn-outline btn-info flex items-center gap-2 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg">
+                <i data-lucide="check-square"></i> Manage Tasks
+            </div>
+        </div>
+    </div>
+    
+    <div class="w-full bg-gray-200 py-10 text-center flex flex-col items-center mt-10 animate__animated animate__fadeInUp animate__delay-3s">
+        <h2 class="text-4xl font-bold text-gray-700 animate__animated animate__bounce">"Code is like humor. When you have to explain it, it’s bad."</h2>
+        <p class="text-gray-600 mt-4 text-center">- Cory House</p>
+        <div class="flex justify-center gap-6 mt-6 animate__animated animate__flash animate__infinite">
+            <i data-lucide="code" class="w-12 h-12 text-gray-500"></i>
+            <i data-lucide="terminal" class="w-12 h-12 text-gray-500"></i>
+            <i data-lucide="layers" class="w-12 h-12 text-gray-500"></i>
+        </div>
+    </div>
 {% endblock %}
