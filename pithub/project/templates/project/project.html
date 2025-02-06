@@ -68,10 +68,10 @@
     <div class="mt-6 flex flex-col gap-4">
         <div class="mt-6 grid grid-cols-4 gap-4">
             {% for projectfile in project.files.all %}
-                <div class="py-6 px-6 bg-slate-200">
-                    <h3 class="mb-4 text-xl">{{ projectfile.name }}</h3>
+                <div class="py-6 px-6 bg-slate-200 ">
+                    <h3 class="mb-4 text-xl text-black font-bold underlined">{{ projectfile.name }}</h3>
     
-                    <a href="{{ projectfile.attachment.url }}" target="_blank" class="text-sm text-slate-600">
+                    <a href="{{ projectfile.attachment.url }}" target="_blank" class="text-sm text-slate-600 hover:underline text-black-500 mx-4 ">
                         Download file
                     </a>
 
@@ -91,9 +91,9 @@
         {% for note in project.notes.all %}
             <div class="py-6 px-6 bg-slate-200">
                 <a href="{% url 'project:note_detail' project.id note.id %}">
-                    <h3 class="mb-4 text-xl">{{ note.name }}</h3>
+                    <h3 class="mb-4 text-xl text-black font-bold">{{ note.name }}</h3>
 
-                    <p class="text-sm text-slate-600">
+                    <p class="text-m text-slate-600 text-red-800 font-semibold">
                         {{ note.body|truncatechars:50 }}
                     </p>
                 </a>
