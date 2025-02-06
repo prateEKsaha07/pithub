@@ -1,6 +1,7 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
+<div class="h-screen">
     <h1 class="mb-6 text-3xl">{{ todolist.name }}</h1>
 
     {% if todolist.description %}
@@ -24,4 +25,5 @@
             </div>
         {% endfor %}
     </div>
+</div>
 {% endblock %}
