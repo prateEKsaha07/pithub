@@ -7,25 +7,57 @@
         <p class="mb-6">{{ project.description }}</p>
     {% endif %}
 
-    <a href="{% url 'todolist:add' project.id %}" class="py-4 px-8 bg-sky-600 text-white inline-block">Add to-do list</a>
 
-    <a href="{% url 'project:upload_file' project.id %}" class="mt-6 py-4 px-8 bg-slate-600 text-white inline-block">Upload file</a>
+    <a href="{% url 'todolist:add' project.id %}" class="py-4 px-8 bg-sky-600 text-white inline-block rounded-lg hover:bg-green-500"> 
+        
+        <div class="flex gap-2 ">
 
-    <a href="{% url 'project:edit' project.id %}" class="py-4 px-8 bg-sky-600 text-white inline-block">Edit</a>
+        <svg class="h-8 w-8 text-red-800"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M16 6h3a1 1 0 0 1 1 1v11a2 2 0 0 1 -4 0v-13a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1v12a3 3 0 0 0 3 3h11" />  <line x1="8" y1="8" x2="12" y2="8" />  <line x1="8" y1="12" x2="12" y2="12" />  <line x1="8" y1="16" x2="12" y2="16" /></svg>
 
-    <a href="{% url 'project:delete' project.id %}" class="py-4 px-8 bg-amber-600 text-white inline-block">Delete</a>
+        <span class="mt-1">Add to-do list</span></div> </a>
+
+        
+    
+
+    <a href="{% url 'project:upload_file' project.id %}" class="mt-6 py-4 px-8 bg-slate-600 text-white inline-block rounded-lg hover:bg-slate-500">
+        
+        <div class="flex gap-2">
+
+
+        <svg class="h-8 w-8 text-red-800"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2" />  <circle cx="12" cy="14" r="2" />  <polyline points="14 4 14 8 8 8 8 4" /></svg>
+        
+        <span class="mt-1">Upload file</span></div></a>
+    
+
+
+
+    <a href="{% url 'project:edit' project.id %}" class="py-4 px-8 bg-sky-600 text-white inline-block rounded-lg hover:bg-green-500">
+        <div class="flex gap-2">
+        <svg class="h-8 w-8 text-red-800" <svg  width="24"  height="24"  viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M12 20h9" />  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" /></svg>
+
+        <span class="mt-1">Edit</span></div></a>
+    
+    
+
+    <a href="{% url 'project:delete' project.id %}" class="py-4 px-8 bg-amber-600 text-white inline-block rounded-lg hover:bg-red-500">
+        
+        <div class="flex gap-2">
+
+        <svg class="h-8 w-8 text-red-800"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <polyline points="3 6 5 6 21 6" />  <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg>
+        
+        <span class="mt-1">Delete</span></div></a>
 
    
 
-        <div class="mt-6 flew flex flex-col gap-4">
+        <div class="mt-4 flew flex flex-col gap-4 ">
 
             {% for todolist in project.todolists.all %}
 
-            <div class="py-6 px-6 bg-slate-200">
+            <div class="py-6 px-6  rounded-xl bg-gray-300">
                 <a href="{% url 'todolist:todolist' project.id todolist.id %}">
-                    <h2 class="mb-4 text-xl">{{ todolist.name }}</h2>
+                    <h2 class="mb-4 text-2xl text-blue-500 font-bold underline">{{ todolist.name }}</h2>
 
-                    <p class="text-sm text-slate-600">{{ todolist.description }}</p>
+                    <p class="text-m text-red-600 font-semibold ">{{ todolist.description }}</p>
                 </a>
             </div>
             {% endfor %}

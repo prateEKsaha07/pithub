@@ -1,10 +1,11 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
+<div class="h-screen ">
     <h1 class="mb-6 text-3xl">
         <div class="flex gap-2">
             <svg class="h-8 w-8 text-red-800"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2" />  <circle cx="12" cy="14" r="2" />  <polyline points="14 4 14 8 8 8 8 4" /></svg>
-            <span class="text-red-700 font-bold ">Projects</span>
+            <span class="text-red-700 font-bold ">my Projects</span>
         </div>
     </h1>
 
@@ -29,4 +30,5 @@
             </div>
             {% endfor %}
         </div>
+</div>
 {% endblock %}
